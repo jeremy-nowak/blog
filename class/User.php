@@ -2,13 +2,25 @@
 class User{
     private $pdo;
     private $id;
-    public $login;
-    public $pass;
+    private $login;
+    private $pass;
     private $usercheck;
+
+    
 
     public function __construct()
     {
         $this->pdo = new pdo("mysql:host=localhost;dbname=blog", "root", "");
+        if(isset($_SESSION["userId"]))
+        {
+            $this->id = $_SESSION["userId"];
+            $this->login = $_SESSION["userLogin"];
+        }
+    }
+
+    public function getLogin()
+    {
+        return $this->login;
     }
 
     public function register()
@@ -71,5 +83,24 @@ class User{
 
         
     }
+// AJOUT
+
+    public function crushImage($imgNew){ 
+
+
+        $verify = "SELECT profilimg FROM utilisateurs WHERE id=:id";
+        $prepare = $this->pdo ->prepare($verify);
+        $prepare->execute(array('id' => $this->id));
+
+        $imgOld = $prepare->fetchAll();
+
+        
+
+    }
+    
+// AJOUT
+
+   
+    
 }
 ?>

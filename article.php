@@ -1,4 +1,7 @@
 <?php
+session_start();
+require_once("class/User.php");
+$user = new User;
 
 
 
@@ -12,6 +15,9 @@
     <title>Articles</title>
 </head>
 <body>
+    <header>
+        <H1>Bonjour <?= $user->getLogin()?></H1>
+    </header>
 <form  method="post" id="artForm">
     <input type="file" name="artImg" id="artImg" placeholder="Image article" >
     <input type="text" name="artTitle" id="artTitle" placeholder="Title article" >

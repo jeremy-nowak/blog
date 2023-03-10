@@ -11,6 +11,7 @@ regFormeDisplay.addEventListener("click", function (){
     logForm.style.display='none';
     })
     
+
 regBtn.addEventListener("click", function(ev){
     ev.preventDefault()
 
@@ -33,3 +34,6 @@ regBtn.addEventListener("click", function(ev){
         }
     })
 })
+
+
+    

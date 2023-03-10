@@ -55,7 +55,7 @@ logForm.addEventListener("submit", function(ev){
         console.log(content);
         connectMessage.innerHTML = content;
         if(content === "Connexion réussie"){
-            window.location.href="article.php";
+            window.location.href="profil.php";
         }
     
     });

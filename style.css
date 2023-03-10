@@ -1,1 +1,66 @@
 
+body{
+   background-image: url(./backgimg/bodyImg.png);
+   background-size: cover;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+/* MISE EN PLACE DU HEADER */
+header{
+   width: 100%;
+   height: 40px;
+   background-color: brown;
+}
+
+
+/* MISE EN PLACE DU HEADER */
+
+
+/* FORMULAIRE UTILISE POUR LOG ET UPDATE  */
+
+.divForm{
+   width: 40%;
+   height: 60%;
+   position: absolute;
+   top: 10%;
+   border-radius: 8px;
+   backdrop-filter: blur(20px);
+   background-color: rgba(255, 255, 255, 0.5);
+   box-shadow: 0 1px 12px rgba(169, 165, 165, 0.745), inset 0 1px 12px rgba(46, 45, 45, 0.797);
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+
+/* FORMULAIRE UTILISE POUR LOG ET UPDATE  */
+
+
+}divLogUpdate
+ #regForm{
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+}
+/* STYLE DE LA PAGE DE PROFIL */
+
+.divLogUpdate{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+
+}
+#updLoginForm{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+}
+#updPassword{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+}
+/* STYLE DE LA PAGE DE PROFIL */
