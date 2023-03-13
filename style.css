@@ -1,10 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&family=Roboto:wght@700&display=swap');
 
 body{
    background-image: url(./backgimg/bkg1.jpg);
    background-size: cover;
+
+}
+.content{
    display: flex;
    justify-content: center;
    align-items: center;
+
 }
 
 /* MISE EN PLACE DU HEADER */
@@ -26,7 +31,7 @@ header{
    display: flex;
    width: 100%;
    align-items: center;
-   font-family: 'Roboto', sans-serif;
+   
    color: white;
    font-family: 'Roboto', sans-serif;
 }
@@ -56,30 +61,49 @@ header{
 
 /* FORMULAIRE UTILISE POUR LOG ET UPDATE  */
 
-.divForm{
+.logFormDisplay{
    width: 35%;
    height: 65%;
    position: absolute;
    top: 20%;
    border-radius: 8px;
-   backdrop-filter: blur(20px);
-   background-color: rgba(255, 255, 255, 0.5);
-   box-shadow: 0 1px 12px rgba(169, 165, 165, 0.745), inset 0 1px 12px rgba(46, 45, 45, 0.797);
+   backdrop-filter: blur(2px);
+   background-color: rgba(255, 255, 255, 0.4);
+
+
+
+}
+input{
+   display: block;
+   border: none;
+   background-color: rgba(255, 255, 255, 0.4);
+   border-bottom: 1px solid black;
+   background: none;   
+
+}
+.regFormDisplay{
+   
+   width: 35%;
+   height: 65%;
+   position: absolute;
+   top: 20%;
+   border-radius: 8px;
+   backdrop-filter: blur(2px);
+   background-color: rgba(255, 255, 255, 0.4);
    display: flex;
-   flex-direction: column;
    justify-content: center;
-   align-items: center;
+
+}
+
 
 /* FORMULAIRE UTILISE POUR LOG ET UPDATE  */
 
-
-}divLogUpdate
- #regForm{
-   display: flex;
-   flex-direction: row;
-   justify-content: center;
-   align-items: center;
+#regForm{
+   display: none;
+   flex-direction: column;
+   background-color: blue;
 }
+
 /* STYLE DE LA PAGE DE PROFIL */
 
 .divLogUpdate{
@@ -100,3 +124,53 @@ header{
    justify-content: center;
 }
 /* STYLE DE LA PAGE DE PROFIL */
+
+/* Button 6 */
+.button-6 {
+   align-items: center;
+   background-color: #FFFFFF;
+   border: 1px solid rgba(0, 0, 0, 0.1);
+   border-radius: .25rem;
+   box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+   box-sizing: border-box;
+   color: rgba(0, 0, 0, 0.85);
+   cursor: pointer;
+   display: inline-flex;
+   
+   font-size: 16px;
+   font-weight: 600;
+   justify-content: center;
+   line-height: 1.25;
+   margin: 0;
+   min-height: 3rem;
+   padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+   position: relative;
+   text-decoration: none;
+   transition: all 250ms;
+   user-select: none;
+   -webkit-user-select: none;
+   touch-action: manipulation;
+   vertical-align: baseline;
+   width: auto;
+   font-family: 'Roboto Slab', serif;
+ }
+ 
+ .button-6:hover,
+ .button-6:focus {
+   border-color: rgba(0, 0, 0, 0.15);
+   box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+   color: rgba(0, 0, 0, 0.65);
+ }
+ 
+ .button-6:hover {
+   transform: translateY(-1px);
+ }
+ 
+ .button-6:active {
+   background-color: #F0F0F1;
+   border-color: rgba(0, 0, 0, 0.15);
+   box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+   color: rgba(0, 0, 0, 0.65);
+   transform: translateY(0);
+ }
+ /* Button 6 */

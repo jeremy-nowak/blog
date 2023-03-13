@@ -14,32 +14,37 @@ include 'header.php';
 </head>
 
 <body>
-
-<div class="divForm">
-    <div class="btn_container">
-    <br><button id="regFormeDisplay">Inscription</button>
-        <button id="logDisplaybtn">Connexion</button>
+<div class="content">
+    <div class="rien">
+        
     </div>
- 
-    <form id="regForm" name="regForm" method="POST" style="display:none">
-    <br><input type="text" id="regLog" name="regLog" placeholder="Login"><br>
-    <br><input type="password" id="regPass" name="regPass" placeholder="Password"><br>
-    <br><input type="password" id="regConfPass" name="regConfPass" placeholder="Password Confirmation"><br>
-    <br><label for="regImg">Avatar</label>
-    <br><input type="file" id="regImg" name="regImg"><br>
-    <br><button type="submit" id="regBtn" name="regBtn">Register</button><br>
-    <br><p id="regMessage"></p>
-    </form>
-
-    <form id="logForm" name="logForm" method="POST" style="display:none">
-    <br><input type="text" id="logLog" name="logLog" placeholder="Login"><br>
-    <br><input type="password" id="logPass" name="logPass" placeholder="Password"><br>
-    <br> <button id="logBtn" name="logBtn">Login in</button><br>
-        <p id="connectMessage"></p>
+    <div class="regFormDisplay" id="regFormDisplay">
 
 
-    </form>
+        <form id="regForm" name="regForm" method="POST">
+            <br><input type="text" id="regLog" name="regLog" placeholder="Login"><br>
+            <br><input type="password" id="regPass" name="regPass" placeholder="Password"><br>
+            <br><input type="password" id="regConfPass" name="regConfPass" placeholder="Password Confirmation"><br>
+            <br><label for="regImg">Avatar</label>
+            <br><input type="file" id="regImg" name="regImg"><br>
+            <br><button type="submit" id="regBtn" name="regBtn" class="button-6">Register</button><br>
+            <br>
+            <p id="regMessage"></p>
+        </form>
     </div>
+
+    <div class="logFormDisplay" id="logFormDisplay" style="display:none">
+
+
+        <form id="logForm" name="logForm" method="POST"  class="logForm">
+            <br><input type="text" id="logLog" name="logLog" placeholder="Login"><br>
+            <br><input type="password" id="logPass" name="logPass" placeholder="Password"><br>
+            <br> <button id="logBtn" name="logBtn" class="button-6">Login</button><br>
+            <p id="connectMessage"></p>
+        </form>
+    </div>
+</div>
+
     <script src="./js/connexion.js"></script>
     <script src="./js/register.js"></script>
 </body>

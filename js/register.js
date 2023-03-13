@@ -1,4 +1,4 @@
-let regFormeDisplay = document.querySelector('#regFormeDisplay');
+let regDisplayBtn = document.querySelector('#regDisplayBtn');
 let regMail = document.querySelector('#regMail');
 let regPass = document.querySelector('#regPass');
 let regConfPass = document.querySelector('#regConfPass');
@@ -6,9 +6,15 @@ let regBtn = document.querySelector('#regBtn');
 let regForm = document.querySelector('#regForm');
 let regMessage = document.querySelector("#regMessage");
 
-regFormeDisplay.addEventListener("click", function (){
-    regForm.style.display='block';
-    logForm.style.display='none';
+
+regDisplayBtn.addEventListener("click", function (){
+    // regFormDisplay.style.display='block';
+    // regForm.style.display='block';
+
+    // logFormDisplay.style.display='none';
+    regFormDisplayHidden.classList.remove("regFormDisplayHidden");
+    content.classList.add("regFormDisplay")
+
     })
     
 

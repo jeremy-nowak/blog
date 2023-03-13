@@ -19,8 +19,8 @@ require_once("class/User.php");
                     <ul>
                     <?php if (!isset($_SESSION["userLogin"])) : ?>
                         <li><a href="index.php"><h3>Home</h3></a></li>
-                        <li><a href="connexion.php"><h3>Connexion</h3></a></li>
-                        <li><a href="inscription.php"><h3>Inscription</h3></a></li>
+                        <li><button id="regDisplayBtn"class="button-6">Inscription</button></li>
+                        <li><button id="logDisplayBtn"class="button-6">Connexion</button></li>
                         <?php else: ?>
                             <li><a href="index.php"><h3>Home</h3></a></li>
                             <li><a href="profil.php"><h3>Modification des informations</h3></a></li>

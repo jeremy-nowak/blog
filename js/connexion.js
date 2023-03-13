@@ -1,14 +1,15 @@
-let logDisplaybtn = document.querySelector('#logDisplaybtn');
+let logDisplayBtn = document.querySelector('#logDisplayBtn');
 let logLog = document.querySelector('#logLog');
 let logPass = document.querySelector('#logPass');
 let logBtn = document.querySelector('#logBtn');
 let logForm = document.querySelector('#logForm');
 let connectMessage = document.querySelector('#connectMessage');
 
-logDisplaybtn.addEventListener("click", function (){
-    regForm.style.display="none";
-    logForm.style.display="block";
-    
+logDisplayBtn.addEventListener("click", function (){
+    // regFormDisplay.style.display="none";
+    // logFormDisplay.style.display="block";
+    // logForm.style.display='block';
+
     })
 
 //     logBtn.addEventListener("submit", function(ev){
