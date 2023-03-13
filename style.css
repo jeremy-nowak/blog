@@ -5,83 +5,9 @@ body{
    background-size: cover;
 
 }
-.content{
-   display: flex;
-   justify-content: center;
-   align-items: center;
-
-}
-
-/* MISE EN PLACE DU HEADER */
-header{
-   width: 100%;
-   height: 40px;
-
-}
-.cadre{
-   display: flex;
-   flex-direction: row;
-   justify-items: left;
-   padding-bottom: 3%; 
-   background-color: rgba(255, 255, 255, 0.527);
-   
-
-}
-.sommaire{
-   display: flex;
-   width: 100%;
-   align-items: center;
-   
-   color: white;
-   font-family: 'Roboto', sans-serif;
-}
-.sommaire ul{
-   display: flex;
-   list-style-type: none;
-   justify-content: space-between;
-   width: 100%;
-   color: white;
-   font-family: 'Roboto', sans-serif;
-   text-decoration: none;
-   
-}
-.sommaire a{
-   text-decoration: none;
-   color: rgb(10, 9, 9);
-   width: 100%;
-
-}
-.sommaire h2:hover{
-   color: #495746a9;
-   transform: scale(1.2);
-}
-
-/* MISE EN PLACE DU HEADER */
 
 
-/* FORMULAIRE UTILISE POUR LOG ET UPDATE  */
-
-.logFormDisplay{
-   width: 35%;
-   height: 65%;
-   position: absolute;
-   top: 20%;
-   border-radius: 8px;
-   backdrop-filter: blur(2px);
-   background-color: rgba(255, 255, 255, 0.4);
-
-
-
-}
-input{
-   display: block;
-   border: none;
-   background-color: rgba(255, 255, 255, 0.4);
-   border-bottom: 1px solid black;
-   background: none;   
-
-}
-.regFormDisplay{
+/* #formDisplay{
    
    width: 35%;
    height: 65%;
@@ -89,41 +15,13 @@ input{
    top: 20%;
    border-radius: 8px;
    backdrop-filter: blur(2px);
-   background-color: rgba(255, 255, 255, 0.4);
+   background-color: rgba(255, 255, 255, 0.468);
    display: flex;
    justify-content: center;
 
-}
+} */
 
 
-/* FORMULAIRE UTILISE POUR LOG ET UPDATE  */
-
-#regForm{
-   display: none;
-   flex-direction: column;
-   background-color: blue;
-}
-
-/* STYLE DE LA PAGE DE PROFIL */
-
-.divLogUpdate{
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-
-}
-#updLoginForm{
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-}
-#updPassword{
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-}
-/* STYLE DE LA PAGE DE PROFIL */
 
 /* Button 6 */
 .button-6 {
