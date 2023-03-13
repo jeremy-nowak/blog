@@ -23,10 +23,10 @@ if(isset($_POST['submitArt'])){
         $uploadOk = 0;
     }
 }
-if(file_exists($target_file)){
-    echo "image already exists";
-    $uploadOk = 0;
-}
+// if(file_exists($target_file)){
+//     echo "image already exists";
+//     $uploadOk = 0;
+// }
 if($_FILES["artImg"]["size"] > 50000){
 
     echo "Image too big";
