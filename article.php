@@ -26,23 +26,24 @@ $art = new Article();
 </head>
 
 <body>
-    <div class="container">
-            <?php foreach($articles as $article) : ?>
-                <div class="grid" >
-                    <div class="displayGridImg">
-                         <img src="./artImg/<?=$article['image']?>">
-                    </div>
-                    
-                    <h2><?= $article['titre'] ?></h2>
-                    <p><?=$article['article']?></p>
-                    <span><?= $article['date']?></span>
-                </div>
+<div class="container">
+    <?php for ($i=0; $i < 6; $i++) { ?>
+        <div class="grid" >
+            <div class="displayGridImg">
+                 <img src="./artImg/<?=$articles[$i]['image']?>">
+            </div>
 
-            <?php endforeach; ?>
-            <div id="imgContainer">
-                
-            <p id="artMsg"></p>
+            <h2><?= $articles[$i]['titre'] ?></h2>
+            <p ><?=$articles[$i]['article']?></p>
+            <span><?= $articles[$i]['date']?></span>
+        </div>
+    <?php } ?>
+    
+    <div id="imgContainer">
+        <p id="artMsg"></p>
     </div>
+</div>
+
     <script src="./js/article.js"></script>
 </body>
 
