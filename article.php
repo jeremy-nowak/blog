@@ -1,12 +1,19 @@
 <?php
 session_start();
-require_once("class/User.php");
+require_once("class/Article.php");
 include "header.php";
-$user = new User;
+$art = new Article();
+
+
+
+
+    $articles = $art->getArticle();
+    // var_dump($articles);
 
 
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,18 +22,26 @@ $user = new User;
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Articles</title>
+    <title>Document</title>
 </head>
 
 <body>
-    <div class="artDiv">
-        <form method="post" id="artForm">
-            <input type="file" name="artImg" id="artImg" placeholder="Image article">
-            <input type="text" name="artTitle" id="artTitle" placeholder="Title article">
-            <textarea type="text" name="artText" id="artText" placeholder="Text article"></textarea>
-            <button id="artBtn">Validate</button>
+    <div class="container">
+            <?php foreach($articles as $article) : ?>
+                <div class="grid" >
+                    <div class="displayGridImg">
+                         <img src="./artImg/<?=$article['image']?>">
+                    </div>
+                    
+                    <h2><?= $article['titre'] ?></h2>
+                    <p><?=$article['article']?></p>
+                    <span><?= $article['date']?></span>
+                </div>
+
+            <?php endforeach; ?>
+            <div id="imgContainer">
+                
             <p id="artMsg"></p>
-        </form>
     </div>
     <script src="./js/article.js"></script>
 </body>

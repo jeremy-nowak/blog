@@ -25,7 +25,7 @@ require_once("class/User.php");
 
                             <li><a href="index.php"><h3>Home</h3></a></li>
                             <li><a href="profil.php"><h3>Modification des informations</h3></a></li>
-                            <li><a href="article.php"><h3>Ecrire votre articles</h3></a></li>
+                            <li><a href="postArt.php"><h3>Ecrire votre articles</h3></a></li>
                         <li><a href="deconnexion.php"><h3>Deconnexion</h3></a></li>
                         
                         <?php endif; ?>

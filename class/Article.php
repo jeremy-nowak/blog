@@ -29,5 +29,13 @@ class Article{
        
       }
         
+      public function getArticle(){
+
+       
+        $select = $this->pdo->prepare("SELECT articles.id, articles.titre, articles.article, articles.image, articles.id_utilisateur, articles.date, utilisateurs.id, utilisateurs.login, utilisateurs.profilimg FROM articles INNER JOIN utilisateurs ON articles.id_utilisateur = utilisateurs.id ");
+        $select -> execute();
+        $result = $select->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+      }
     }
 ?>

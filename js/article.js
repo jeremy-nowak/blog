@@ -2,9 +2,10 @@ let artBtn = document.querySelector("#artBtn");
 let artForm = document.querySelector("#artForm");
 let artMsg = document.querySelector('#artMsg');
 
-artBtn.addEventListener("click", submitArt)
-function submitArt(ev){
-    ev.preventDefault()
+
+
+
+function submitArt(){
     let data = new FormData(artForm)
     data.append("submitArt", "ok")
     fetch("artcheck.php", {
@@ -18,3 +19,12 @@ function submitArt(ev){
         artMsg.innerHTML = content;
     })
 }
+
+
+artBtn.addEventListener("click", function(ev){
+    ev.preventDefault()
+    submitArt();
+})
+
+
+

@@ -49,6 +49,10 @@ else{
         echo "Sorry there was an error";
     }
 
+
+    if(isset($_GET["getArt"])){
+        $article->getArticle();
+    }
     
 }
 ?>
