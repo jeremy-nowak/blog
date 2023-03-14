@@ -15,9 +15,9 @@ include 'header.php';
 
 <body>
 
-    <div class="content">
+    <div class="contentDiv">
 
-            <div class="formDisplay" id="formDisplay">
+            <div class="formDisplay1" id="formDisplay">
 
             </div>
 
@@ -27,3 +27,14 @@ include 'header.php';
 </body>
 
 </html>
+
+
+<!-- VOIR POUR FAIRE UNE FUNCTION INNERHTML POUR SUPPRIMER LE CONTENU DE formDisplay DE CE TYPE DANS AUTH.JS
+function myFunction() {
+  var x = document.getElementById("myDIV");
+  if (x.innerHTML === "Hello") {
+    x.innerHTML = "Swapped text!";
+  } else {
+    x.innerHTML = "Hello";
+  }
+} -->

@@ -2,12 +2,55 @@
 
 body{
    background-image: url(./backgimg/bkg1.jpg);
+   background-repeat: no-repeat;
    background-size: cover;
 
 }
+/* -------------------------------------------------------------NAVBAR DEBUT------------------------------------------------------ */
+.cadre{
+   display: flex;
+   flex-direction: row;
+   justify-items: left;
+   padding-bottom: 3%; 
+   background-color: rgba(255, 255, 255, 0.527);
+   
+
+}
+.sommaire{
+   display: flex;
+   width: 100%;
+   align-items: center;
+   font-family: 'Roboto', sans-serif;
+   color: white;
+   font-family: 'Roboto', sans-serif;
+}
+.sommaire ul{
+   display: flex;
+   list-style-type: none;
+   justify-content: space-between;
+   width: 100%;
+   color: white;
+   font-family: 'Roboto', sans-serif;
+   text-decoration: none;
+   
+}
+.sommaire a{
+   text-decoration: none;
+   color: rgb(10, 9, 9);
+   width: 100%;
+
+}
+.sommaire h2:hover{
+   color: #495746a9;
+   transform: scale(1.2);
+}
+
+/* -------------------------------------------------------------NAVBAR FIN------------------------------------------------------- */
 
 
-/* #formDisplay{
+
+/* ----------------------------------------------------Caractere qui toggle l'affichage debut------------------------------------ */
+.formDisplayCss{
    
    width: 35%;
    height: 65%;
@@ -19,11 +62,13 @@ body{
    display: flex;
    justify-content: center;
 
-} */
+}
+.contentDiv{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
 
-
-
-/* Button 6 */
 .button-6 {
    align-items: center;
    background-color: #FFFFFF;
