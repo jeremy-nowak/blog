@@ -1,5 +1,4 @@
 
-<div class="logFormDisplay" id="logFormDisplay">
 <form id="logForm" name="logForm" method="POST">
     <br><input type="text" id="logLog" name="logLog" placeholder="Login"><br>
     <br><input type="password" id="logPass" name="logPass" placeholder="Password"><br>

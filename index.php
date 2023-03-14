@@ -15,7 +15,7 @@ include 'header.php';
 
 <body>
 
-    <div class="contentDiv">
+    <div class="contentDiv" id="contenDiv">
 
             <div class="formDisplay1" id="formDisplay">
 
