@@ -5,8 +5,8 @@ require_once "./class/Article.php";
 if(isset($_GET["article"])){
     $artId = $_GET["article"];
     $getOne = new Article();
-    $getOne -> getOneArt($artId);
-    var_dump($getOne);
+    $oneArt = $getOne -> getOneArt($artId);
+    var_dump($oneArt);
 }
 
 ?>
@@ -19,6 +19,21 @@ if(isset($_GET["article"])){
     <title>Document</title>
 </head>
 <body>
-    
+    <div class="main">
+    <div class="titleSection">
+    <h1><?=$oneArt[0]["titre"]?></h1>
+    </div>
+    <div class="imgSection">
+    <img src ="./artImg/<?=$oneArt[0]["image"]?>">
+    </div>
+    <div class="textSection">
+    <p><?=$oneArt[0]["article"]?></p>
+    </div>
+    <div class="auteurSection">
+    <img src="./profilImg/<?=$oneArt[0]["profilimg"]?>">
+    <p><?=$oneArt[0]["login"]?></p>
+    </div>
+    <p><?=$oneArt[0]["date"]?></p>
+</div>
 </body>
 </html>
