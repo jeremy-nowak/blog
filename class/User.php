@@ -10,7 +10,7 @@ class User{
 
     public function __construct()
     {
-        $this->pdo = new pdo("mysql:host=localhost;dbname=blog", "root", "root");
+        $this->pdo = new pdo("mysql:host=localhost;dbname=blog", "root", "");
         if(isset($_SESSION["userId"]))
         {
             $this->id = $_SESSION["userId"];

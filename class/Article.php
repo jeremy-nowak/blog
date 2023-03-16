@@ -8,7 +8,7 @@ class Article{
 
     public function __construct()
     {
-        $this->pdo = new pdo("mysql:host=localhost;dbname=blog", "root", "root");
+        $this->pdo = new pdo("mysql:host=localhost;dbname=blog", "root", "");
 
     }
 
