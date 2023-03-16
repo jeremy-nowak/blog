@@ -38,7 +38,7 @@ if(isset ($_POST["register"])){
     // MODIFICATION
     
     
-    if($_FILES["regImg"]["size"] > 50000){
+    if($_FILES["regImg"]["size"] > 500000000){
         
         echo "Image too big";
         $uploadOk = 0;

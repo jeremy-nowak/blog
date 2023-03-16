@@ -26,22 +26,29 @@ $art = new Article();
 </head>
 
 <body>
+    <div class="banniere">
+        <img src="https://preview.colorlib.com/theme/bona/images/slider-1.jpg.webp">
+    </div>
 <div class="container">
     <?php for ($i=0; $i < 6; $i++) { ?>
         <div class="grid" >
-            <div class="displayGridImg">
+            <div class="gridImg">
                  <img src="./artImg/<?=$articles[$i]['image']?>">
             </div>
-
+            <div class="gridProfilImg">
+                <img src="./profilImg/<?=$articles[$i]['profilimg']?>">
+            </div>
+            <div class="gridTxt">
             <h2><?= $articles[$i]['titre'] ?></h2>
             <p ><?=$articles[$i]['article']?></p>
+            </div>
+            <div class="gridBandeau">
+
+            </div>
+
             <span><?= $articles[$i]['date']?></span>
         </div>
     <?php } ?>
-    
-    <div id="imgContainer">
-        <p id="artMsg"></p>
-    </div>
 </div>
 
     <script src="./js/article.js"></script>
