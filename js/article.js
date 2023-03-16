@@ -1,6 +1,7 @@
 let artBtn = document.querySelector("#artBtn");
 let artForm = document.querySelector("#artForm");
 let artMsg = document.querySelector('#artMsg');
+let displayOneArt = document.querySelector("#displayOneArt");
 
 
 

@@ -5,7 +5,7 @@ include "header.php";
 $art = new Article();
 
 // foreach ($result as $key =>$value ){
-//     var_dump($result);
+    // var_dump($result);
 
 // }
 // if (isset($_POST["Btn"])){

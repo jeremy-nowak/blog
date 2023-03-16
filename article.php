@@ -8,8 +8,9 @@ $art = new Article();
 
 
     $articles = $art->getArticle();
-    // var_dump($articles);
-
+    echo "<pre>";
+    var_dump($articles);
+    echo "</pre>";
 
 
 ?>
@@ -39,8 +40,10 @@ $art = new Article();
                 <img src="./profilImg/<?=$articles[$i]['profilimg']?>">
             </div>
             <div class="gridTxt">
+            <h2><?= $articles[$i]['id'] ?></h2>
             <h2><?= $articles[$i]['titre'] ?></h2>
             <p ><?=$articles[$i]['article']?></p>
+            <p><a href="displayOneArt.php?article=<?=$articles[$i]["id"]?>">Read more</a></p>
             </div>
             <div class="gridBandeau">
 
