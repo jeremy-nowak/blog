@@ -51,9 +51,21 @@ class User{
         } elseif ($result["password"] = $pass) {
             $_SESSION["userId"] = $result["id"];
             $_SESSION["userLogin"] = $result["login"];
+            $_SESSION["role"] = $result["role"];
+
                       echo "Connexion réussie";
 
         }
+    }
+    
+
+    public function getPanel()
+    {
+        $select = $this->pdo->prepare("SELECT * FROM utilisateurs");
+        $select->execute();
+        $result = $select->fetchAll();
+        return $result;
+
     }
 
     public function userCheck($login, $pass, $passConf){
@@ -83,7 +95,6 @@ class User{
 
         
     }
-// AJOUT
 
     public function crushImage($imgNew){ 
 
@@ -98,9 +109,7 @@ class User{
 
     }
     
-// AJOUT
 
    
     
 }
-?>

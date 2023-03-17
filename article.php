@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once("class/Article.php");
-include "header.php";
+
 $art = new Article();
 
 
@@ -9,7 +9,7 @@ $art = new Article();
 
     $articles = $art->getArticle();
     echo "<pre>";
-    var_dump($articles);
+    // var_dump($articles);
     echo "</pre>";
 
 
@@ -27,6 +27,7 @@ $art = new Article();
 </head>
 
 <body>
+<?php include "header.php"?>
     <div class="banniere">
         <img src="https://preview.colorlib.com/theme/bona/images/slider-1.jpg.webp">
     </div>
@@ -40,7 +41,6 @@ $art = new Article();
                 <img src="./profilImg/<?=$articles[$i]['profilimg']?>">
             </div>
             <div class="gridTxt">
-            <h2><?= $articles[$i]['id'] ?></h2>
             <h2><?= $articles[$i]['titre'] ?></h2>
             <p ><?=$articles[$i]['article']?></p>
             <p><a href="displayOneArt.php?article=<?=$articles[$i]["id"]?>">Read more</a></p>

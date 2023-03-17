@@ -6,7 +6,11 @@ if (isset($_GET["article"])) {
     $artId = $_GET["article"];
     $getOne = new Article();
     $oneArt = $getOne->getOneArt($artId);
-    var_dump($oneArt);
+
+    //    $date= $oneArt[0]["date"];
+    //    $date = new DateTime();
+    //    $date->format("D j M");
+    //    $time= DATE_FORMAT($oneArt[0]["time"], '%H:%i');
 }
 
 ?>
@@ -22,25 +26,36 @@ if (isset($_GET["article"])) {
 </head>
 
 <body>
+    <?php include "header.php" ?>
     <main class="DisplayOneArt">
+
 
         <div class="imgSection">
             <img src="./artImg/<?= $oneArt[0]["image"] ?>">
         </div>
-        <div class="titleSection">
-            <h1><?= $oneArt[0]["titre"] ?></h1>
-        </div>
-        <div class="auteurSection">
-            <img src="./profilImg/<?= $oneArt[0]["profilimg"] ?>">
-            <p><?= $oneArt[0]["login"] ?></p>
-        </div>
-        <div class="textSection">
-             <p><?= $oneArt[0]["date"] ?></p>
-            <p><?= $oneArt[0]["article"] ?></p>
+        <div class="artBlock">
 
+            <div class="artSection">
+                <div class="titleSection">
+                    <h1><?= $oneArt[0]["titre"] ?></h1>
+                </div>
+
+                <div class="textSection">
+                    <p><?= $oneArt[0]["article"] ?></p>
+
+                </div>
+
+                <div class="auteurSection">
+                    <img src="./profilImg/<?= $oneArt[0]["profilimg"] ?>">
+                    
+                        <p class="artLog">par <?= $oneArt[0]["login"] ?></p>
+                        <p class="artTime">le <?= $oneArt[0]["date"] ?> à <?= $oneArt[0]["time"] ?></p>
+                    
+
+                </div>
+            </div>
         </div>
-      
-        
+
     </main>
 </body>
 

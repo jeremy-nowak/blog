@@ -68,7 +68,7 @@ body{
    justify-content: center;
    align-items: center;
 }
-
+/* ------------------------------------------Debut boutons navBar----------------------------- */
 .button-6 {
    align-items: center;
    background-color: #FFFFFF;
@@ -116,8 +116,8 @@ body{
    color: rgba(0, 0, 0, 0.65);
    transform: translateY(0);
  }
- /* Button 6 */
-
+/* ------------------------------------------fin boutons navBar----------------------------- */
+/* -----------------------------------------------Debut du grid--------------------------------- */
 .container{
    display: grid;
    grid-template-columns: 350px 350px 350px;
@@ -184,6 +184,7 @@ body{
 
 
 }  
+/* -----------------------------------------------Fin du grid--------------------------------- */
 
    .banniere img{
       width: 100%;
@@ -191,16 +192,23 @@ body{
    /* --------------------------------------Debut de displayOneArt------------------------------------------------------------- */
 
 .DisplayOneArt{
+   padding-top: 5%;
    display: flex;
    flex-direction: column;
    align-items: center;
    justify-content: center;
-   margin-left: 10%;
-   margin-right: 10%;
-   background-color: antiquewhite;
+   margin-left: 14%;
+   margin-right: 14%;
+}
+.imgSection{
+   width: 100%;
+}
+.imgSection img{
+   width: 100%;   
+
 }
 .auteurSection img{
-   width: 20%;
+   width: 100%;
    border-radius: 180px;
    background-color: white;
    height: 70px;
@@ -210,19 +218,52 @@ body{
    border-width: 5px;
 
 }
+.artBlock{
+   display: flex;
 
+}
+.artSection{
+   display: flex;
+   flex-direction: column;
+   padding: 7%;
+   padding-left: 6%;
+   padding-right: 6%;
+   background-color: #FFFFFF;
+   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.artSection h1{
+   font-size: 48px;
+}
+.auteurSection{
+   display: flex;
+   align-items: center;
+   padding-left: 2%;
+   justify-content: flex-end;
+   padding-top: 7%;
+   
 
+}
+.textSection{
+   padding-top: 5%;
+   padding-left: 3%;
+   padding-right: 3%;
+}
+.auteurSection p{
+   padding-left: 2%;
+   
+}
 
+/* --------------------------------------Fin de displayOneArt------------------------------------------------------------- */
+/* --------------------------------------Debut du Pannel Admin----------------------------- */
+   .getOut{
+      display: flex;
+      width: 100%;
+      justify-content: center;
 
+   }
+   .getOut img{
+      width: 55%;
 
+/* ---------------------------------------Fin du Pannel Admin----------------------------- */
 
-
-
-
-
-
-
-
-
-
-      /* --------------------------------------Fin de displayOneArt------------------------------------------------------------- */
+   }

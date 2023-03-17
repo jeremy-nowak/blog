@@ -40,7 +40,7 @@ class Article{
 
       public function getOneArt($id)
       {
-        $select = $this->pdo->prepare("SELECT articles.id, articles.titre, articles.article, articles.image, articles.id_utilisateur, articles.date, utilisateurs.id as id_utilisateur, utilisateurs.login, utilisateurs.profilimg FROM articles INNER JOIN utilisateurs ON articles.id_utilisateur = utilisateurs.id where articles.id=$id");
+        $select = $this->pdo->prepare("SELECT articles.id, articles.titre, articles.article, articles.image, articles.id_utilisateur, DATE_FORMAT(articles.date, '%d/%m/%Y') as date, DATE_FORMAT(articles.date, '%Hh%i') as time, utilisateurs.id as id_utilisateur, utilisateurs.login, utilisateurs.profilimg FROM articles INNER JOIN utilisateurs ON articles.id_utilisateur = utilisateurs.id where articles.id=$id");
         $select -> execute();
         $result = $select->fetchAll(PDO::FETCH_ASSOC);
         

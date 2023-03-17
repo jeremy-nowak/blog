@@ -1,6 +1,7 @@
 <?php
 session_start();
 include 'header.php';
+ var_dump($_SESSION["role"]);
 ?>
 <!DOCTYPE html>
 <html lang="fr">

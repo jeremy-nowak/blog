@@ -4,6 +4,11 @@ require_once("class/Article.php");
 include "header.php";
 $art = new Article();
 
+var_dump($_SESSION['role']);
+
+ if($_SESSION['role'] != 'moderateur' && $_SESSION['role'] != 'admin'){
+     header("location: index.php");
+ }
 // foreach ($result as $key =>$value ){
     // var_dump($result);
 
