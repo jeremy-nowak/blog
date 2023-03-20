@@ -6,7 +6,7 @@ $target_dir = "profilImg/";
 // $target_file = $target_dir . basename($_FILES["regImg"]["name"]);
 $uploadOk = 1;
 // $imgFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-
+var_dump($panel);
 
 if(isset ($_POST["register"])){
     $target_file = $target_dir . basename($_FILES["regImg"]["name"]);
@@ -81,4 +81,5 @@ if(isset($_POST["login"])){
 if(isset($_GET['displayForm'])){
     echo $user->getLogin();
 }
+
 ?>

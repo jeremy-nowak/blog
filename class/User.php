@@ -96,20 +96,18 @@ class User{
         
     }
 
-    public function crushImage($imgNew){ 
-
-
-        $verify = "SELECT profilimg FROM utilisateurs WHERE id=:id";
-        $prepare = $this->pdo ->prepare($verify);
-        $prepare->execute(array('id' => $this->id));
-
-        $imgOld = $prepare->fetchAll();
-
-        
-
-    }
-    
+  
 
    
-    
+    public function updateRole($role, $id)
+    {
+        $update = "UPDATE utilisateurs SET `role`='$role' WHERE id = $id";
+        $prepare = $this->pdo->prepare($update);
+        if ($prepare->execute()) {
+            echo "ok";
+        }else{
+            echo "nop";
+        }
+
+    }
 }

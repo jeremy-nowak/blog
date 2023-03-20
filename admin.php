@@ -4,12 +4,16 @@ require_once "class/User.php";
 
 $getPanel = new User();
 $panel = $getPanel->getPanel();
+
+
+// var_dump($_SESSION["userId"]);
 var_dump($panel);
+if (isset($_POST['adminValidate'])) {
+
+    $selectedRole = $getPanel->updateRole($_POST["selectRole"], $_POST["adminValidate"]);
+    echo "OK c Bon";
+}
 ?>
-
-
-<!DOCTYPE html>
-<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -25,48 +29,59 @@ var_dump($panel);
         <div class="getOut">
             <img src="https://media.giphy.com/media/ac7MA7r5IMYda/giphy.gif" alt="">
         </div>
-    <?php endif ?>
-    <table class="tftable" border="2">
-        <div class="adminPanelDisplay">
-            <thead>
-
-
-                <tr>
-                    <?php for ($i = 0; $i < (count($panel)); $i++) : ?>
-
+    <?php else : ?>
+        <p id="panelMsg"></p>
+        <table class="tftable" border="2">
+            <div class="adminPanelDisplay">
+                <thead>
+                    <tr>
+                        <?php echo "<th> Name</th>"; ?>
+                        <?php echo "<th> Id</th>"; ?>
+                        <?php echo "<th> Password</th>"; ?>
+                        <?php echo "<th> Image</th>"; ?>
+                        <?php echo "<th> Role</th>"; ?>
+                    </tr>
+                </thead>
+                <?php for ($i = 0; $i < (count($panel)); $i++) : ?>
+                    <tr>
                         <?php echo "<th>" . $panel[$i][1] . "</th>"; ?>
-
-                    <?php endfor; ?>
-                </tr>
-                <tr>
-                    <?php for ($i = 0; $i < (count($panel)); $i++) : ?>
-
                         <?php echo "<td>" . $panel[$i][0] . "</td>"; ?>
-                    <?php endfor; ?>
-                </tr>
-                <tr>
-                    <?php for ($i = 0; $i < (count($panel)); $i++) : ?>
-                        <?php echo "<td>" . $panel[$i][2] . "</td>"; ?>
-                    <?php endfor; ?>
+                        <?php echo "<td>" . $panel[$i][2]. "<button id='modifyPassBtn'><img src='editPass.png'></button>" . "</td>"; ?>
+                        <?php echo "<td>" . "<img src='profilImg/{$panel[$i][3]}' style='width: 50px; height: 50px;'><button id='deleteProfilImg'><img src='deleteBtn.png'></button>" . "</td>"; ?>
 
-                </tr>
-                <tr>
-                    <?php for ($i = 0; $i < (count($panel)); $i++) : ?>
-                        <?php echo "<td>" . $panel[$i][3] . "</td>"; ?>
-                    <?php endfor; ?>
+                        <td>
+                            <form id="adminForm" method="post">
+                                <select name='selectRole' id='selectRole' data-id="<?= $panel[$i][0] ?>">
+                                    <option value="<?= $panel[$i][4] ?>"><?= $panel[$i][4] ?></option>
+                                    <?php if ($panel[$i][4] == "admin") : ?>
 
-                </tr>
-                <tr>
-                    <?php for ($i = 0; $i < (count($panel)); $i++) : ?>
-                        <?php echo "<td>" . $panel[$i][4    ] . "</td>"; ?>
-                    <?php endfor; ?>
+                                    <?php elseif ($panel[$i][4] == "moderateur") : ?>
+                                        <option value="admin" id="optionAdmin">Admin</option>
+                                        <option value="user" id="optionUser">User</option>
+                                    <?php elseif ($panel[$i][4] == "user") : ?>
+                                        <option value="admin" id="optionAdmin">Admin</option>
+                                        <option value="moderateur" id="optionModerator">Moderateur</option>
+                                    <?php endif; ?>
+                                </select>
+                                <button name="adminValidate" value="<?= $panel[$i][0] ?>">Validate change</button>
+                            </form>
 
-                </tr>
+                        </td>
 
-    </table>
-    </thead>
 
-    </div>
+
+                    </tr>
+                <?php endfor; ?>
+
+            </div>
+
+        </table>
+
+
+    <?php endif; ?>
+
+
+    <script src="./js/admin.js"></script>;
 </body>
 
 </html>

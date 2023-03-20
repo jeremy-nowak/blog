@@ -125,6 +125,7 @@ body{
    column-gap: 80px;
    row-gap: 80px;
    justify-content: center;
+   padding-top: 10%;
    
 
 }
@@ -263,7 +264,66 @@ body{
    }
    .getOut img{
       width: 55%;
-
+   }
 /* ---------------------------------------Fin du Pannel Admin----------------------------- */
 
-   }
+/* -------------------------------------------Debut bandeau------------------------------------------------------- */
+
+.bandeau{
+   display: flex;
+   justify-content: center;   
+}
+.bandeauCase1{
+   display: flex;
+   background-color: #EDF3F3;
+   justify-content: center;
+   width: 100%;
+   border-right: white;
+   border-width: 5%;
+   border-style: solid;
+   border-top: #EDF3F3;
+   border-left: #EDF3F3;
+   border-bottom: #EDF3F3;
+   color: red;
+
+}
+.bandeauCase1 img{
+   width: 10%;
+   height: 12px;
+   
+}
+
+.bandeauCase2{
+   display: flex;
+   background-color: #EDF3F3;
+   justify-content: center;
+   width: 100%;
+
+}
+.bandeauCase2 img{
+   width: 10%;
+   
+}
+
+
+
+
+
+/* /* -------------------------------------------Fin bandeau------------------------------------------------------- */
+
+/* ------------------------------------------------Debut du tableau du panel admin---------------------------------- */
+.tftable{
+   width: 100%;
+}
+
+.tftable {
+   font-size:12px;color:#333333;width:100%;border-width: 1px;border-color: #8e8983;border-collapse: collapse;}
+.tftable th {
+   font-size:12px;background-color:#acc8cc;border-width: 1px;padding: 8px;border-style: solid;border-color: #729ea5;text-align:left;}
+.tftable tr {
+   background-color:#d4e3e5;}
+.tftable td {
+   font-size:12px;border-width: 1px;padding: 8px;border-style: solid;border-color: #729ea5;}
+.tftable tr:hover {
+   background-color: rgba(255, 255, 255, 0.527);}
+/* ------------------------------------------------fin du tableau du panel admin---------------------------------- */

@@ -45,11 +45,12 @@ $art = new Article();
             <p ><?=$articles[$i]['article']?></p>
             <p><a href="displayOneArt.php?article=<?=$articles[$i]["id"]?>">Read more</a></p>
             </div>
-            <div class="gridBandeau">
-
-            </div>
-
+         
             <span><?= $articles[$i]['date']?></span>
+            <div class="bandeau">
+                <div class="bandeauCase1"><img src="likeCase.png" alt=""></div>
+                <div class="bandeauCase2"><img src="chatCase.png" alt=""></div>
+            </div>
         </div>
     <?php } ?>
 </div>
