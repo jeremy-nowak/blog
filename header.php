@@ -34,7 +34,7 @@ require_once("class/User.php");
                                 <h3>Profil</h3>
                             </a></li>
                             <li><a href="article.php">
-                                <h3>Article</h3>
+                                <h3>Articles</h3>
                             </a></li>
 
                         <?php if ($_SESSION['role'] == "moderateur" || $_SESSION['role'] == "admin") : ?>

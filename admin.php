@@ -80,8 +80,10 @@ if (isset($_POST['adminValidate'])) {
 
     <?php endif; ?>
 
-
+    <script src="./js/auth.js"></script>;
     <script src="./js/admin.js"></script>;
+   
+
 </body>
 
 </html>

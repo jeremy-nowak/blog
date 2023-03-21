@@ -46,7 +46,44 @@ class Article{
         
         return $result;
       }
+
+      public function addLike($artId, $userId){
+        
+        $select = $this->pdo->prepare("SELECT * FROM `like` WHERE id_utilisateur =? AND id_article =?");
+        $select->execute([$userId, $artId]);
+        $result = $select->fetchAll();
+
+        if ($result){
+          $delete = $this->pdo->prepare("DELETE FROM `like` WHERE id_utilisateur=:userId AND id_article=:artId ");
+          $delete->execute([
+            "userId" => $userId,
+            "artId" => $artId,
+          ]);
+          
+        }else{
+
+          $val = 1;
+          $register = "INSERT INTO `like` (id_article, id_utilisateur, nb_like) VALUE( ?, ?, ?)";
+          $prepare = $this->pdo ->prepare($register);
+  
+          $prepare->execute([$artId, $userId, $val]);
+        }
+        
+      //   else{
+      //     $update = "UPDATE `like` SET `like`='$nb_like' WHERE id = $artId";
+      //     $prepare = $this->pdo->prepare($update);
+      //     $prepare->execute();
+      //   }
+      // }
+    }
+    public function displayLike($artId){
+      $select= $this->pdo->prepare("SELECT SUM(nb_like) as nb_like FROM `like` WHERE id_article=:artId ");
+      $select->execute([
+        "artId"=>$artId,
+      ]);
+      $result = $select->fetchAll(PDO::FETCH_ASSOC);
+      return $result;
     }
 
-  
+   }
 ?>

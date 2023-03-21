@@ -30,4 +30,3 @@ artBtn.addEventListener("click", function(ev){
 
 
 
-
