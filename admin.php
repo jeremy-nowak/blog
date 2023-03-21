@@ -46,8 +46,8 @@ if (isset($_POST['adminValidate'])) {
                     <tr>
                         <?php echo "<th>" . $panel[$i][1] . "</th>"; ?>
                         <?php echo "<td>" . $panel[$i][0] . "</td>"; ?>
-                        <?php echo "<td>" . $panel[$i][2]. "<button id='modifyPassBtn'><img src='editPass.png'></button>" . "</td>"; ?>
-                        <?php echo "<td>" . "<img src='profilImg/{$panel[$i][3]}' style='width: 55px; height: 55px;'><button id='deleteProfilImg'><img src='deleteBtn.png'></button>" . "</td>"; ?>
+                        <?php echo "<td>" . $panel[$i][2]. "<button id='modifyPassBtn'><img src='./assset/editPass.png'></button>" . "</td>"; ?>
+                        <?php echo "<td>" . "<img src='profilImg/{$panel[$i][3]}' style='width: 55px; height: 55px;'><button id='./assset/deleteProfilImg'><img src='./assset/deleteBtn.png'></button>" . "</td>"; ?>
 
                         <td>
                             <form id="adminForm" method="post">

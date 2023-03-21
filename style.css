@@ -16,6 +16,12 @@ body{
    
 
 }
+.sommaire{
+   width: 100%;
+}
+.sommaire h1{
+   color: #8e8983;
+}
 .som  re{
    display: flex;
    width: 100%;
@@ -26,9 +32,10 @@ body{
 }
 .sommaire ul{
    display: flex;
+   justify-content: space-around;
    list-style-type: none;
    justify-content: space-between;
-   width: 100%;
+   width: 90%;
    color: white;
    font-family: 'Roboto', sans-serif;
    text-decoration: none;

@@ -6,8 +6,7 @@ $target_dir = "profilImg/";
 // $target_file = $target_dir . basename($_FILES["regImg"]["name"]);
 $uploadOk = 1;
 // $imgFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-var_dump($panel);
-
+    
 if(isset ($_POST["register"])){
     $target_file = $target_dir . basename($_FILES["regImg"]["name"]);
     $imgFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
@@ -25,17 +24,7 @@ if(isset ($_POST["register"])){
             $uploadOk = 0;
         }
     }
-    // MODIFICATION
 
-
-    // if(file_exists($target_file)){
-    //     echo "image already exists";
-    //     $uploadOk = 0;
-
-    //     // Au lieu d'empecher d'ajouter une image, simplement effacer l'ancienne et la remplacer par la nouvelle.
-    // }
-    
-    // MODIFICATION
     
     
     if($_FILES["regImg"]["size"] > 500000000){

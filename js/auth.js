@@ -12,6 +12,16 @@ function hideFetch() {
     formDisplay.removeChild(formDisplay.firstChild);
   }
 }
+function redirectPanel()
+{
+  window.location="admin";
+}
+
+function redirectProfil()
+{
+  window.location="profil.php";
+}
+
 
 async function showFetchReg() {
   await fetch("register.php")
@@ -35,6 +45,7 @@ async function showFetchReg() {
           })
           .then((content) => {
             formDisplay.textContent = content;
+            console.log(data);
           });
       });
     });
@@ -62,6 +73,7 @@ async function showFetchLog() {
           })
           .then((content) => {
             formDisplay.textContent = content;
+            redirectProfil()
           });
       });
     });

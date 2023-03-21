@@ -33,6 +33,9 @@ require_once("class/User.php");
                         <li><a href="profil.php">
                                 <h3>Profil</h3>
                             </a></li>
+                            <li><a href="article.php">
+                                <h3>Article</h3>
+                            </a></li>
 
                         <?php if ($_SESSION['role'] == "moderateur" || $_SESSION['role'] == "admin") : ?>
                             <li><a href="postArt.php">

@@ -3,15 +3,11 @@ session_start();
 require_once("class/Article.php");
 
 $art = new Article();
-
-
-
-
-    $articles = $art->getArticle();
-    echo "<pre>";
-    // var_dump($articles);
-    echo "</pre>";
-
+$articles = $art->getArticle();
+var_dump($_SESSION);
+if ($_SESSION == "empty") {
+    header('Location: index.php');
+}
 
 ?>
 
@@ -48,8 +44,8 @@ $art = new Article();
          
             <span><?= $articles[$i]['date']?></span>
             <div class="bandeau">
-                <div class="bandeauCase1"><img src="likeCase.png" alt=""></div>
-                <div class="bandeauCase2"><img src="chatCase.png" alt=""></div>
+                <div class="bandeauCase1"><img src="./assset/likeCase.png" alt=""></div>
+                <div class="bandeauCase2"><img src="./assset/chatCase.png" alt=""></div>
             </div>
         </div>
     <?php } ?>
