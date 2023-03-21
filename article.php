@@ -43,17 +43,11 @@ $articles = $art->getArticle();
             <span><?= $articles[$i]['date']?></span>
             <div class="bandeau">
                 <form method="post">
-                <div class="bandeauCase1"><img src="./assset/likeCase.png"><button name="addLike" class="addLike" value=<?=$articles[$i]["id"]?>>                <?php if(!$displayLike[0]["nb_like"]){
-    echo "0";
-    }
-    else{
-        echo $displayLike[0]["nb_like"];
-    }
-    ?> 
-     </button></div>
+                <div class="bandeauCase1"><img src="./assset/likeCase.png"><button name="addLike" class="addLike" value=<?=$articles[$i]["id"]?>>                <?php if(!$displayLike[0]["nb_like"]){echo "0";}else{echo $displayLike[0]["nb_like"];}?> </button></div>
                 <div class="bandeauCase2"><img src="./assset/chatCase.png" alt=""></div>
                 </form>
 
+                
             </div>
         </div>
     <?php } ?>
@@ -62,5 +56,3 @@ $articles = $art->getArticle();
     
     <script src="./js/like.js"></script>
 </body>
-
-</html>
