@@ -32,7 +32,13 @@ class Article{
       public function getArticle(){
 
        
-        $select = $this->pdo->prepare("SELECT articles.id, articles.titre, articles.article, articles.image, articles.id_utilisateur, articles.date, utilisateurs.id as id_utilisateur, utilisateurs.login, utilisateurs.profilimg FROM articles INNER JOIN utilisateurs ON articles.id_utilisateur = utilisateurs.id ORDER BY date DESC");
+        $select = $this->pdo->prepare(
+          "SELECT articles.id, articles.titre, articles.article, articles.image, articles.id_utilisateur, articles.date, utilisateurs.id as id_utilisateur, utilisateurs.login, utilisateurs.profilimg, amour.nb_like, amour.id_article
+          FROM articles 
+          INNER JOIN utilisateurs ON articles.id_utilisateur = utilisateurs.id 
+          LEFT JOIN amour ON articles.id = amour.id_article
+          ORDER BY date DESC");
+
         $select -> execute();
         $result = $select->fetchAll(PDO::FETCH_ASSOC);
         return $result;
@@ -49,12 +55,12 @@ class Article{
 
       public function addLike($artId, $userId){
         
-        $select = $this->pdo->prepare("SELECT * FROM `like` WHERE id_utilisateur =? AND id_article =?");
+        $select = $this->pdo->prepare("SELECT * FROM amour WHERE id_utilisateur =? AND id_article =?");
         $select->execute([$userId, $artId]);
         $result = $select->fetchAll();
 
         if ($result){
-          $delete = $this->pdo->prepare("DELETE FROM `like` WHERE id_utilisateur=:userId AND id_article=:artId ");
+          $delete = $this->pdo->prepare("DELETE FROM amour WHERE id_utilisateur=:userId AND id_article=:artId ");
           $delete->execute([
             "userId" => $userId,
             "artId" => $artId,
@@ -63,7 +69,7 @@ class Article{
         }else{
 
           $val = 1;
-          $register = "INSERT INTO `like` (id_article, id_utilisateur, nb_like) VALUE( ?, ?, ?)";
+          $register = "INSERT INTO amour (id_article, id_utilisateur, nb_like) VALUE( ?, ?, ?)";
           $prepare = $this->pdo ->prepare($register);
   
           $prepare->execute([$artId, $userId, $val]);
@@ -77,12 +83,12 @@ class Article{
       // }
     }
     public function displayLike($artId){
-      $select= $this->pdo->prepare("SELECT SUM(nb_like) as nb_like FROM `like` WHERE id_article=:artId ");
+      $select= $this->pdo->prepare("SELECT SUM(nb_like) as nb_like FROM amour WHERE id_article=:artId ");
       $select->execute([
         "artId"=>$artId,
       ]);
       $result = $select->fetchAll(PDO::FETCH_ASSOC);
-      return $result;
+      echo json_encode($result);
     }
 
    }

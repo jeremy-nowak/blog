@@ -46,6 +46,10 @@ $imgFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
         }
        
     }
+    if(isset($_GET["getArt"])){
+        $article->getArticle();
+        echo "Checkitout";
+    }
 }
 // if(file_exists($target_file)){
 //     echo "image already exists";
@@ -53,16 +57,13 @@ $imgFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 // }
 
 
-if(isset($_GET["getArt"])){
-    $article->getArticle();
-}
+
  
 if(isset($_POST["like"])){
     $article->addLike($_POST["idPost"], $_SESSION["userId"]);
+    $article->displayLike($_POST["idPost"]);
 }
 
-if(isset($_GET["displayLike"])){
-    $article->displayLike($art);
-}
+
 
 ?>

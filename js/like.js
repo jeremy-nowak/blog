@@ -1,7 +1,7 @@
-let addLikeBtn = document.querySelector('.addLike');
-let container = document.querySelector('.container')
+let addLikeBtn = document.querySelectorAll('.addLike');
+let bandeau = document.querySelector('.bandeau')
 let likeMsg = document.querySelector("#likeMsg");
-
+let spanNbLike = document.querySelectorAll("#spanNbLike");
 
 
 function addLike(idPost){
@@ -13,19 +13,33 @@ function addLike(idPost){
         body : data
     })
     .then((response)=>{
-        return response.text()
+        return response.json()
 
     })
     .then((content) =>{
-        likeMsg.innerHTML = content;
-        console.log(content);
+        console.log(content)
+        
+       for(let i = 0; i < content.length; i++){
+        
+        for(let span of addLikeBtn){
+        
+            span.textContent = content[i]["nb_like"]
+            spanNbLike.textContent = span
+       
+        }
+       }
     })
 }
-
-container.addEventListener("click", function(ev){
-    ev.preventDefault()
-    if (ev.target.classList.contains('addLike')){
-        const idPost=ev.target.value;
-        addLike(idPost);
-    }
-})
+console.log(addLikeBtn);
+for (const btn of addLikeBtn) {
+    console.log(btn);
+    btn.addEventListener("click", function(ev){
+        console.table(ev.target, ev.type);
+        ev.preventDefault()
+        if (ev.target.classList.contains('addLike')){
+            const idPost=ev.target.value;
+            addLike(idPost);
+            
+        }
+    })
+}

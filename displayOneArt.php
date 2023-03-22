@@ -6,11 +6,6 @@ if (isset($_GET["article"])) {
     $artId = $_GET["article"];
     $getOne = new Article();
     $oneArt = $getOne->getOneArt($artId);
-
-    //    $date= $oneArt[0]["date"];
-    //    $date = new DateTime();
-    //    $date->format("D j M");
-    //    $time= DATE_FORMAT($oneArt[0]["time"], '%H:%i');
 }
 
 ?>
