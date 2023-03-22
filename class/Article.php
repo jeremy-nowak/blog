@@ -8,7 +8,7 @@ class Article{
 
     public function __construct()
     {
-        $this->pdo = new pdo("mysql:host=localhost;dbname=blog", "root", "");
+        $this->pdo = new pdo("mysql:host=localhost;dbname=blog", "root", "root");
 
     }
 
@@ -46,7 +46,14 @@ class Article{
 
       public function getOneArt($id)
       {
-        $select = $this->pdo->prepare("SELECT articles.id, articles.titre, articles.article, articles.image, articles.id_utilisateur, DATE_FORMAT(articles.date, '%d/%m/%Y') as date, DATE_FORMAT(articles.date, '%Hh%i') as time, utilisateurs.id as id_utilisateur, utilisateurs.login, utilisateurs.profilimg FROM articles INNER JOIN utilisateurs ON articles.id_utilisateur = utilisateurs.id where articles.id=$id");
+        $select = $this->pdo->prepare
+        (
+          "SELECT articles.id, articles.titre, articles.article, articles.image, articles.id_utilisateur, amour.nb_like,
+          DATE_FORMAT(articles.date, '%d/%m/%Y') as date, 
+          DATE_FORMAT(articles.date, '%Hh%i') as time, utilisateurs.id as id_utilisateur, utilisateurs.login, utilisateurs.profilimg FROM articles 
+          INNER JOIN utilisateurs ON articles.id_utilisateur = utilisateurs.id
+          LEFT JOIN amour ON articles.id = amour.id_article
+          WHERE articles.id=$id");
         $select -> execute();
         $result = $select->fetchAll(PDO::FETCH_ASSOC);
         
@@ -82,14 +89,7 @@ class Article{
       //   }
       // }
     }
-    public function displayLike($artId){
-      $select= $this->pdo->prepare("SELECT SUM(nb_like) as nb_like FROM amour WHERE id_article=:artId ");
-      $select->execute([
-        "artId"=>$artId,
-      ]);
-      $result = $select->fetchAll(PDO::FETCH_ASSOC);
-      echo json_encode($result);
-    }
+    
 
    }
 ?>

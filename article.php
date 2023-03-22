@@ -4,9 +4,6 @@ require_once("class/Article.php");
 $art = new Article();
 $articles = $art->getArticle();
 // var_dump($articles);
-if (isset($_POST["addLike"])) {
-    var_dump($_POST);
-}
 ?>
 
 <!DOCTYPE html>
@@ -47,23 +44,11 @@ if (isset($_POST["addLike"])) {
                     </div>
                    
                     <span><?= $articles[$i]['date'] ?></span>
-                    <div class="bandeau">
-                        <form method="post">
-                            <div class="bandeauCase1"><img src="./assset/likeCase.png">
-                                <button name="addLike" class="addLike" value=<?= $articles[$i]["id"] ?>>
-                            </button>
-                            <span id="spanNbLike"></span>
-
-                            </div>
-                            <div class="bandeauCase2"><img src="./assset/chatCase.png" alt=""></div>
-                        </form>
-
-
-                    </div>
+                    
                 </div>
             <?php } ?>
         </div>
 
 
-        <script src="./js/like.js"></script>
+        
 </body>
