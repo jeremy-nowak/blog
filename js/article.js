@@ -6,6 +6,7 @@ let displayOneArt = document.querySelector("#displayOneArt");
 
 
 
+
 function submitArt(){
     let data = new FormData(artForm)
     data.append("submitArt", "ok")

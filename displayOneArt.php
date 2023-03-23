@@ -1,12 +1,13 @@
 <?php
 require_once "./class/Article.php";
 session_start();
-
 if (isset($_GET["article"])) {
     $artId = $_GET["article"];
     $getOne = new Article();
     $oneArt = $getOne->getOneArt($artId);
-    var_dump($oneArt);
+    $displayComment = $getOne->displayComment($artId);
+    
+    
 }
 if(isset($_POST["addLike"])){
     $art = new Article();
@@ -56,8 +57,9 @@ if(isset($_POST["addLike"])){
             <button id ="comment">Commenter</button>
                  <p><?= $oneArt[0]["nb_like"]?></p>
                 </div>
+                <div class="putACommentSection" id="commentSection">
             </div>
-            <div class="putACommentSection" id="commentSection">
+            
 
             </div>
         </div>

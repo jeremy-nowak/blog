@@ -61,9 +61,15 @@ $imgFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
  
 if(isset($_POST["like"])){
     $article->addLike($_POST["idPost"], $_SESSION["userId"]);
-    $article->displayLike($_POST["idPost"]);
+    // $article->displayLike($_POST["idPost"]);
 }
 
+if (isset($_POST["comment"])){
+    $article->addComment($_POST["commentaire"], $_SESSION["userId"], $_POST["idPost"]);
+}
 
+if(isset($_GET["displayComment"])){
 
+    $article->displayComment($_GET["displayComment"]);
+}
 ?>

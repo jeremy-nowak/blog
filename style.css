@@ -128,7 +128,7 @@ body{
 .container{
    display: grid;
    grid-template-columns: 350px 350px 350px;
-   grid-template-rows: 415px 415px ;
+   grid-template-rows: 475px 475px ;
    column-gap: 80px;
    row-gap: 80px;
    justify-content: center;
@@ -142,6 +142,7 @@ body{
    flex-direction: column;
    background-color: #FFFFFF;
    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+   
 }
 .gridImg img{
    width: 100%;
@@ -158,7 +159,8 @@ body{
 
 }
 .grid p{
-   max-width: 300px;
+   padding-left: 2%;
+   padding-right: 2%;
    overflow: hidden;
    text-overflow: ellipsis;
    white-space: nowrap;
@@ -168,6 +170,8 @@ body{
  .grid h2{
    display: flex;
    justify-content: center;
+   padding-bottom: 10%;
+   font-size: 31px;
  }
  .grid span{
    display: flex;
@@ -341,3 +345,11 @@ body{
 
 }
 /* ----------------------------------------------Fin Bouton addLike ------------------------------------------ */
+.DisplayOneArt{
+   display: flex;
+   flex-direction: column;
+}
+.commentDiv{
+   display: flex;
+   flex-direction: row;
+}

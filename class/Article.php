@@ -33,9 +33,9 @@ class Article{
 
        
         $select = $this->pdo->prepare(
-          "SELECT articles.id, articles.titre, articles.article, articles.image, articles.id_utilisateur, articles.date, utilisateurs.id as id_utilisateur, utilisateurs.login, utilisateurs.profilimg, amour.nb_like, amour.id_article
+          "SELECT articles.id, articles.titre, articles.article, articles.image, articles.id_utilisateur, DATE_FORMAT(articles.date, '%d/%m/%Y') as date, utilisateurs.id as id_utilisateur, utilisateurs.login, utilisateurs.profilimg, amour.nb_like, amour.id_article
           FROM articles 
-          INNER JOIN utilisateurs ON articles.id_utilisateur = utilisateurs.id 
+          INNER JOIN utilisateurs ON articles.id_utilisateur = utilisateurs.id
           LEFT JOIN amour ON articles.id = amour.id_article
           ORDER BY date DESC");
 
@@ -89,7 +89,22 @@ class Article{
       //   }
       // }
     }
-    
+    public function addComment($commentaire, $userId, $artId){
+      $register = "INSERT INTO commentaires (commentaire, date, id_utilisateur, id_article) VALUE (?, NOW(), ?, ?)";
+      $prepare =$this->pdo->prepare($register);
+      $prepare->execute([$commentaire, $userId, $artId]);
+    }
 
+    public function displayComment($artId){
+      $select = $this->pdo->prepare("SELECT commentaires.*, utilisateurs.login, utilisateurs.profilimg
+      FROM commentaires 
+      INNER JOIN utilisateurs ON commentaires.id_utilisateur = utilisateurs.id
+      WHERE id_article = $artId");
+
+      $select -> execute();
+      $result = $select->fetchAll(PDO::FETCH_ASSOC);
+
+      echo json_encode($result);
+    }
    }
 ?>

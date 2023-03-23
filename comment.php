@@ -3,5 +3,5 @@
 ?>
 <form method="post" id="commentForm">
     <textarea name="commentaire" cols="30" rows="10"></textarea>
-    <button>Commenter</button>
+    <button id="addComment">Commenter</button>
 </form>

@@ -3,7 +3,9 @@ session_start();
 require_once("class/Article.php");
 $art = new Article();
 $articles = $art->getArticle();
+// echo "<pre>";
 // var_dump($articles);
+// echo "</pre>";
 ?>
 
 <!DOCTYPE html>
@@ -38,8 +40,8 @@ $articles = $art->getArticle();
                     <div class="gridTxt">
                     <p id="test"></p>
                         <h2><?= $articles[$i]['titre'] ?></h2>
-                        <p><?= $articles[$i]['article'] ?></p>
-                        <?php var_dump($articles[$i]["id"]); ?>
+                        
+                        
                         <p><a href="displayOneArt.php?article=<?= $articles[$i]["id"] ?>">Read more</a></p>
                     </div>
                    
